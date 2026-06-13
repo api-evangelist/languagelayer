@@ -1,0 +1,35 @@
+name: languagelayer Rate Limits
+description: Rate limiting policies for the languagelayer language detection API across subscription tiers.
+url: https://languagelayer.com/pricing
+tiers:
+  - plan: Free
+    requests_per_month: 100
+    batch_detection: false
+    https: false
+    notes: HTTP only; HTTPS requires paid plan
+  - plan: Basic
+    requests_per_month: 50000
+    batch_detection: true
+    https: true
+    notes: HTTPS encryption enabled; batch detection available
+  - plan: Professional
+    requests_per_month: 500000
+    batch_detection: true
+    https: true
+    notes: HTTPS encryption enabled; batch detection available
+  - plan: Enterprise
+    requests_per_month: 2000000
+    batch_detection: true
+    https: true
+    notes: HTTPS encryption enabled; batch detection available
+overage:
+  - plan: Basic
+    cost_per_request: 0.0003992
+  - plan: Professional
+    cost_per_request: 0.00015992
+  - plan: Enterprise
+    cost_per_request: 0.00007998
+notes:
+  - Rate limits are enforced on a monthly rolling basis.
+  - Batch requests count as one API call per batch submission regardless of texts processed.
+  - HTTPS (256-bit encryption) is restricted to Basic plan and above.

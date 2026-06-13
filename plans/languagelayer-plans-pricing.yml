@@ -1,0 +1,59 @@
+name: languagelayer Plans and Pricing
+description: Pricing plans for the languagelayer language detection API, covering monthly request quotas from free tier through enterprise scale.
+url: https://languagelayer.com/pricing
+plans:
+  - name: Free
+    price: 0.00
+    currency: USD
+    period: month
+    requests: 100
+    overage_per_request: 0.00
+    features:
+      - Standard Detection
+      - 256-bit HTTPS Encryption
+    support: None
+  - name: Basic
+    price: 4.99
+    currency: USD
+    period: month
+    annual_price: 53.99
+    annual_discount_pct: 10
+    requests: 50000
+    overage_per_request: 0.0003992
+    features:
+      - Standard Detection
+      - Batch Detection
+      - 256-bit HTTPS Encryption
+      - WebP Support
+    support: Standard Support
+  - name: Professional
+    price: 19.99
+    currency: USD
+    period: month
+    annual_price: 209.99
+    annual_discount_pct: 12.5
+    requests: 500000
+    overage_per_request: 0.00015992
+    features:
+      - Standard Detection
+      - Batch Detection
+      - 256-bit HTTPS Encryption
+      - WebP Support
+    support: Standard Support
+  - name: Enterprise
+    price: 39.99
+    currency: USD
+    period: month
+    annual_price: 407.99
+    annual_discount_pct: 15
+    requests: 2000000
+    overage_per_request: 0.00007998
+    features:
+      - Standard Detection
+      - Batch Detection
+      - 256-bit HTTPS Encryption
+      - WebP Support
+    support: Standard Support
+notes:
+  - Platinum Support is available as an optional paid add-on for all paid tiers.
+  - Annual billing provides discounts of 10-15% depending on plan tier.

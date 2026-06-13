@@ -1,0 +1,36 @@
+name: languagelayer FinOps
+description: Financial operations guidance for managing costs with the languagelayer language detection API.
+url: https://languagelayer.com/pricing
+cost_model: subscription_plus_overage
+currency: USD
+tiers:
+  - plan: Free
+    monthly_cost: 0.00
+    annual_cost: 0.00
+    included_requests: 100
+    cost_per_additional_request: 0.00
+  - plan: Basic
+    monthly_cost: 4.99
+    annual_cost: 53.99
+    included_requests: 50000
+    cost_per_additional_request: 0.0003992
+    effective_cost_per_request: 0.00009980
+  - plan: Professional
+    monthly_cost: 19.99
+    annual_cost: 209.99
+    included_requests: 500000
+    cost_per_additional_request: 0.00015992
+    effective_cost_per_request: 0.00003998
+  - plan: Enterprise
+    monthly_cost: 39.99
+    annual_cost: 407.99
+    included_requests: 2000000
+    cost_per_additional_request: 0.00007998
+    effective_cost_per_request: 0.00001999
+recommendations:
+  - Use the Free tier for prototyping and low-volume use cases under 100 requests per month.
+  - Move to Basic when monthly detection volume exceeds 100 requests to unlock batch processing and HTTPS.
+  - Annual billing saves 10-15% compared to monthly billing depending on plan tier.
+  - Monitor monthly usage to avoid overage charges; set alerts near 80% of monthly quota.
+  - Batch detection consolidates multiple texts into a single API call, improving cost efficiency at scale.
+  - At high volumes the Enterprise plan overage rate ($0.00007998/req) is the lowest available.

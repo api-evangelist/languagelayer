@@ -1,0 +1,60 @@
+aid: languagelayer
+name: languagelayer
+description: Language detection REST API that identifies 173 languages and accents from text with confidence scores, character usage statistics, and batch processing support, powered by an AI-based detection algorithm via the APILayer platform.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/languagelayer/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Language Detection
+  - Natural Language Processing
+  - Text Analysis
+  - Machine Learning
+  - AI
+apis:
+  - aid: languagelayer:languagelayer-api
+    name: languagelayer API
+    description: REST API for detecting the language of any text string or batch of strings, returning language code, language name, confidence scores, and character usage statistics across 173 supported languages.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://languagelayer.com/
+    baseURL: https://apilayer.net/api
+    tags:
+      - Language Detection
+      - NLP
+      - Text Classification
+    properties:
+      - type: Documentation
+        url: https://languagelayer.com/documentation
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/languagelayer/refs/heads/main/openapi.yml
+    contact:
+      - FN: APILayer Support
+        email: support@apilayer.net
+        X-Url: https://languagelayer.com/
+common:
+  - type: Website
+    url: https://languagelayer.com/
+  - type: Documentation
+    url: https://languagelayer.com/documentation
+  - type: GitHubOrg
+    url: https://github.com/apilayer
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/apilayer/
+  - type: Blog
+    url: https://blog.apilayer.com/
+  - type: Pricing
+    url: https://languagelayer.com/pricing
+  - type: StatusPage
+    url: https://languagelayer.com/api-status
+  - type: X
+    url: https://x.com/apilayernet
+  - type: Plans
+    url: plans/languagelayer-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/languagelayer-rate-limits.yml
+  - type: FinOps
+    url: finops/languagelayer-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
