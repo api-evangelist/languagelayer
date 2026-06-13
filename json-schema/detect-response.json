@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/languagelayer/main/json-schema/detect-response.json",
+  "title": "DetectResponse",
+  "description": "Response object returned by the languagelayer /detect endpoint for single text language detection.",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Whether the API request was successful."
+    },
+    "error": {
+      "type": "object",
+      "description": "Error details when success is false.",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "description": "Numeric error code.",
+          "examples": [101, 102, 103]
+        },
+        "type": {
+          "type": "string",
+          "description": "Short error type identifier.",
+          "examples": ["missing_access_key", "invalid_access_key"]
+        },
+        "info": {
+          "type": "string",
+          "description": "Human-readable error description."
+        }
+      }
+    },
+    "results": {
+      "type": "array",
+      "description": "List of language detection results ordered by probability score (highest first).",
+      "items": {
+        "$ref": "language-result.json"
+      }
+    }
+  },
+  "required": ["success"]
+}

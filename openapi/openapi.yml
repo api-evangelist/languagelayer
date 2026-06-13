@@ -1,0 +1,223 @@
+openapi: 3.0.3
+info:
+  title: languagelayer API
+  description: >
+    Language detection REST API that identifies 173 languages and accents from
+    text with confidence scores, character usage statistics, and batch processing
+    support, powered by an AI-based detection algorithm via the APILayer platform.
+  version: '1.0'
+  contact:
+    name: APILayer Support
+    email: support@apilayer.net
+    url: https://languagelayer.com/
+  termsOfService: https://languagelayer.com/terms
+externalDocs:
+  description: Official Documentation
+  url: https://languagelayer.com/documentation
+servers:
+  - url: https://apilayer.net/api
+    description: Production API server
+security:
+  - accessKey: []
+paths:
+  /detect:
+    get:
+      operationId: detectLanguage
+      summary: Detect Language
+      description: >
+        Identifies the language of a single text string, returning language code,
+        language name, confidence score, probability score, and character usage
+        statistics across 173 supported languages.
+      parameters:
+        - name: access_key
+          in: query
+          required: true
+          description: Your API access key obtained from languagelayer.com.
+          schema:
+            type: string
+        - name: query
+          in: query
+          required: true
+          description: The URL-encoded text string whose language you want to detect.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful language detection response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DetectResponse'
+              example:
+                success: true
+                results:
+                  - language_code: en
+                    language_name: English
+                    probability: 78.4
+                    percentage: 99.2
+                    reliable_result: true
+        '401':
+          description: Unauthorized — missing or invalid access key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Endpoint not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /batch:
+    post:
+      operationId: batchDetectLanguage
+      summary: Batch Detect Languages
+      description: >
+        Identifies the language of multiple text strings in a single request,
+        returning language detection results for each text supplied.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+                - access_key
+                - query[]
+              properties:
+                access_key:
+                  type: string
+                  description: Your API access key obtained from languagelayer.com.
+                'query[]':
+                  type: array
+                  items:
+                    type: string
+                  description: Array of text strings to detect languages for.
+      responses:
+        '200':
+          description: Successful batch language detection response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchResponse'
+              example:
+                success: true
+                results:
+                  - - language_code: en
+                      language_name: English
+                      probability: 78.4
+                      percentage: 99.2
+                      reliable_result: true
+                  - - language_code: fr
+                      language_name: French
+                      probability: 81.2
+                      percentage: 97.5
+                      reliable_result: true
+        '401':
+          description: Unauthorized — missing or invalid access key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    accessKey:
+      type: apiKey
+      in: query
+      name: access_key
+      description: API access key obtained from languagelayer.com.
+  schemas:
+    LanguageResult:
+      type: object
+      description: Language detection result for a single text.
+      properties:
+        language_code:
+          type: string
+          description: ISO 639-1 or ISO 639-2 language code (e.g. "en", "fr").
+          example: en
+        language_name:
+          type: string
+          description: Human-readable language name (e.g. "English").
+          example: English
+        probability:
+          type: number
+          format: float
+          description: >
+            Probability score indicating how strongly the language was matched,
+            based on cross-referencing words, expressions, and grammatical
+            constructions.
+          example: 78.4
+        percentage:
+          type: number
+          format: float
+          description: >
+            Confidence percentage indicating the API's level of confidence that
+            the detected language is correct.
+          example: 99.2
+        reliable_result:
+          type: boolean
+          description: >
+            Boolean flag indicating whether the detection result is considered
+            reliable.
+          example: true
+    DetectResponse:
+      type: object
+      description: Response object for a single text language detection request.
+      properties:
+        success:
+          type: boolean
+          description: Whether the API request was successful.
+          example: true
+        error:
+          $ref: '#/components/schemas/ErrorInfo'
+        results:
+          type: array
+          description: >
+            List of language detection results ordered by probability score
+            (highest first).
+          items:
+            $ref: '#/components/schemas/LanguageResult'
+    BatchResponse:
+      type: object
+      description: Response object for a batch language detection request.
+      properties:
+        success:
+          type: boolean
+          description: Whether the API request was successful.
+          example: true
+        error:
+          $ref: '#/components/schemas/ErrorInfo'
+        results:
+          type: array
+          description: >
+            Array of result arrays, one per input text, each containing language
+            detection results ordered by probability score.
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/LanguageResult'
+    ErrorResponse:
+      type: object
+      description: Error response object.
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          $ref: '#/components/schemas/ErrorInfo'
+    ErrorInfo:
+      type: object
+      description: Details about an API error.
+      properties:
+        code:
+          type: integer
+          description: Numeric error code.
+          example: 101
+        type:
+          type: string
+          description: Short error type identifier.
+          example: missing_access_key
+        info:
+          type: string
+          description: Human-readable error description.
+          example: You have not supplied an API Access Key.

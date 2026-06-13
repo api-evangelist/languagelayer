@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "hydra": "http://www.w3.org/ns/hydra/core#",
+    "owl": "http://www.w3.org/2002/07/owl#"
+  },
+  "@type": "WebAPI",
+  "@id": "https://languagelayer.com/",
+  "name": "languagelayer API",
+  "description": "Language detection REST API that identifies 173 languages and accents from text with confidence scores, character usage statistics, and batch processing support, powered by an AI-based detection algorithm via the APILayer platform.",
+  "url": "https://languagelayer.com/",
+  "documentation": "https://languagelayer.com/documentation",
+  "termsOfService": "https://languagelayer.com/terms",
+  "provider": {
+    "@type": "Organization",
+    "name": "APILayer",
+    "url": "https://apilayer.com/",
+    "sameAs": [
+      "https://github.com/apilayer",
+      "https://www.linkedin.com/company/apilayer/",
+      "https://x.com/apilayernet"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "support@apilayer.net",
+      "contactType": "customer support"
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://languagelayer.com/pricing",
+    "description": "Free and paid plans available. Free plan includes limited API calls per month."
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://apilayer.net/api"
+  },
+  "keywords": [
+    "language detection",
+    "natural language processing",
+    "text analysis",
+    "machine learning",
+    "AI",
+    "NLP",
+    "text classification"
+  ]
+}

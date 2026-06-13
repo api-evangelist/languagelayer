@@ -1,0 +1,38 @@
+{
+  "summary": "Batch detect languages for multiple text strings",
+  "description": "Example request and response for detecting languages of multiple text strings in a single batch request using the /batch endpoint.",
+  "request": {
+    "method": "POST",
+    "url": "https://apilayer.net/api/batch",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body": "access_key=YOUR_ACCESS_KEY&query[]=Hello+how+are+you&query[]=Bonjour+comment+allez+vous"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "results": [
+        [
+          {
+            "language_code": "en",
+            "language_name": "English",
+            "probability": 78.4,
+            "percentage": 99.2,
+            "reliable_result": true
+          }
+        ],
+        [
+          {
+            "language_code": "fr",
+            "language_name": "French",
+            "probability": 81.2,
+            "percentage": 97.5,
+            "reliable_result": true
+          }
+        ]
+      ]
+    }
+  }
+}

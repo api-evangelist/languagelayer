@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/languagelayer/main/json-schema/language-result.json",
+  "title": "LanguageResult",
+  "description": "Language detection result for a single text string returned by the languagelayer API.",
+  "type": "object",
+  "properties": {
+    "language_code": {
+      "type": "string",
+      "description": "ISO 639-1 or ISO 639-2 language code (e.g. 'en', 'fr').",
+      "examples": ["en", "fr", "de", "zh", "ar"]
+    },
+    "language_name": {
+      "type": "string",
+      "description": "Human-readable language name.",
+      "examples": ["English", "French", "German", "Chinese", "Arabic"]
+    },
+    "probability": {
+      "type": "number",
+      "description": "Probability score indicating how strongly the language was matched based on cross-referencing words, expressions, and grammatical constructions.",
+      "minimum": 0,
+      "maximum": 100,
+      "examples": [78.4]
+    },
+    "percentage": {
+      "type": "number",
+      "description": "Confidence percentage indicating the API's level of confidence that the detected language is correct.",
+      "minimum": 0,
+      "maximum": 100,
+      "examples": [99.2]
+    },
+    "reliable_result": {
+      "type": "boolean",
+      "description": "Boolean flag indicating whether the detection result is considered reliable.",
+      "examples": [true]
+    }
+  },
+  "required": ["language_code", "language_name", "probability", "percentage", "reliable_result"]
+}

@@ -1,0 +1,27 @@
+{
+  "summary": "Detect language of an English text string",
+  "description": "Example request and response for detecting the language of a short English sentence using the /detect endpoint.",
+  "request": {
+    "method": "GET",
+    "url": "https://apilayer.net/api/detect",
+    "parameters": {
+      "access_key": "YOUR_ACCESS_KEY",
+      "query": "Hello%2C%20how%20are%20you%3F"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "results": [
+        {
+          "language_code": "en",
+          "language_name": "English",
+          "probability": 78.4,
+          "percentage": 99.2,
+          "reliable_result": true
+        }
+      ]
+    }
+  }
+}

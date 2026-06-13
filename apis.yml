@@ -27,7 +27,7 @@ apis:
       - type: Documentation
         url: https://languagelayer.com/documentation
       - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/languagelayer/refs/heads/main/openapi.yml
+        url: https://raw.githubusercontent.com/api-evangelist/languagelayer/refs/heads/main/openapi/openapi.yml
     contact:
       - FN: APILayer Support
         email: support@apilayer.net
