@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: accessKey
+  type: apiKey
+  in: query
+  parameter: access_key
+  description: API access key obtained from languagelayer.com.
+  sources:
+  - openapi/openapi.yml

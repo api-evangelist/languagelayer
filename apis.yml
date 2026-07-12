@@ -33,6 +33,10 @@ apis:
         email: support@apilayer.net
         X-Url: https://languagelayer.com/
 common:
+  - type: DomainSecurity
+    url: security/languagelayer-domain-security.yml
+  - type: Authentication
+    url: authentication/languagelayer-authentication.yml
   - type: Website
     url: https://languagelayer.com/
   - type: Documentation
