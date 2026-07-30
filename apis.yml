@@ -1,7 +1,20 @@
 aid: languagelayer
 name: languagelayer
 description: Language detection REST API that identifies 173 languages and accents from text with confidence scores, character usage statistics, and batch processing support, powered by an AI-based detection algorithm via the APILayer platform.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/languagelayer.png
 url: https://raw.githubusercontent.com/api-evangelist/languagelayer/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -13,25 +26,30 @@ tags:
   - Machine Learning
   - AI
 apis:
-  - aid: languagelayer:languagelayer-api
-    name: languagelayer API
-    description: REST API for detecting the language of any text string or batch of strings, returning language code, language name, confidence scores, and character usage statistics across 173 supported languages.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://languagelayer.com/
-    baseURL: https://apilayer.net/api
-    tags:
-      - Language Detection
-      - NLP
-      - Text Classification
-    properties:
-      - type: Documentation
-        url: https://languagelayer.com/documentation
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/languagelayer/refs/heads/main/openapi/openapi.yml
-    contact:
-      - FN: APILayer Support
-        email: support@apilayer.net
-        X-Url: https://languagelayer.com/
+- aid: languagelayer:languagelayer-batch-api
+  name: languagelayer Batch API
+  description: The Batch API from languagelayer — 1 operation(s) for batch.
+  humanURL: https://languagelayer.com/
+  baseURL: https://apilayer.net/api
+  tags:
+  - Batch
+  properties:
+  - type: OpenAPI
+    url: openapi/languagelayer-batch-api-openapi.yml
+  - type: Documentation
+    url: https://languagelayer.com/documentation
+- aid: languagelayer:languagelayer-detect-api
+  name: languagelayer Detect API
+  description: The Detect API from languagelayer — 1 operation(s) for detect.
+  humanURL: https://languagelayer.com/
+  baseURL: https://apilayer.net/api
+  tags:
+  - Detect
+  properties:
+  - type: OpenAPI
+    url: openapi/languagelayer-detect-api-openapi.yml
+  - type: Documentation
+    url: https://languagelayer.com/documentation
 common:
   - type: AgenticAccess
     url: agentic-access/languagelayer-agentic-access.yml
