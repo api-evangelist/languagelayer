@@ -1,0 +1,16 @@
+{
+  "provider": "languagelayer",
+  "sources": [
+    "languagelayer-batch-api-openapi.yml",
+    "languagelayer-detect-api-openapi.yml"
+  ],
+  "outputs": [
+    "languagelayer-batch-api-openapi.yml",
+    "languagelayer-detect-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
