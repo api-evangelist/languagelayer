@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "languagelayer Batch API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "access_key",
+      "value": "{{access_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Batch",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Batch Detect Languages",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://apilayer.net/api/batch",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "access_key",
+                  "value": ""
+                },
+                {
+                  "name": "query[]",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Identifies the language of multiple text strings in a single request, returning language detection results for each text supplied.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

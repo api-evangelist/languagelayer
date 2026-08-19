@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "languagelayer Batch Detect API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "access_key",
+      "value": "{{access_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Detect",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Detect Language",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apilayer.net/api/detect",
+            "params": [
+              {
+                "name": "access_key",
+                "value": "",
+                "type": "query",
+                "description": "Your API access key obtained from languagelayer.com."
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "The URL-encoded text string whose language you want to detect."
+              }
+            ]
+          },
+          "docs": "Identifies the language of a single text string, returning language code, language name, confidence score, probability score, and character usage statistics across 173 supported languages.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
