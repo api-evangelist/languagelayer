@@ -1,6 +1,18 @@
 aid: languagelayer
 name: languagelayer
 description: Language detection REST API that identifies 173 languages and accents from text with confidence scores, character usage statistics, and batch processing support, powered by an AI-based detection algorithm via the APILayer platform.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
