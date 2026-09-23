@@ -1,8 +1,7 @@
 {
   "provider": "languagelayer",
   "sources": [
-    "languagelayer-batch-api-openapi.yml",
-    "languagelayer-detect-api-openapi.yml"
+    "_original/openapi.yml"
   ],
   "outputs": [
     "languagelayer-batch-api-openapi.yml",
@@ -11,6 +10,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "openapi.yml: tagged paths GET /detect -> Detect",
+    "openapi.yml: tagged paths POST /batch -> Batch",
+    "openapi.yml: declared missing tag: Batch",
+    "openapi.yml: declared missing tag: Detect",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "languagelayer-batch-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "languagelayer-detect-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

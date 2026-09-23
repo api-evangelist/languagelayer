@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: languagelayer Batch Detect API
-  description: 'Language detection REST API that identifies 173 languages and accents from text with confidence scores, character usage statistics, and batch processing support, powered by an AI-based detection algorithm via the APILayer platform.
-
-    '
+  title: languagelayer Detect API
+  description: Language detection REST API that identifies 173 languages and accents from text with confidence scores, character usage statistics, and batch processing support, powered by an AI-based detection algorithm via the APILayer platform.
   version: '1.0'
   contact:
     name: APILayer Support
@@ -22,9 +20,7 @@ paths:
     get:
       operationId: detectLanguage
       summary: Detect Language
-      description: 'Identifies the language of a single text string, returning language code, language name, confidence score, probability score, and character usage statistics across 173 supported languages.
-
-        '
+      description: Identifies the language of a single text string, returning language code, language name, confidence score, probability score, and character usage statistics across 173 supported languages.
       parameters:
       - name: access_key
         in: query
@@ -69,6 +65,23 @@ paths:
       - Detect
 components:
   schemas:
+    DetectResponse:
+      type: object
+      description: Response object for a single text language detection request.
+      properties:
+        success:
+          type: boolean
+          description: Whether the API request was successful.
+          example: true
+        error:
+          $ref: '#/components/schemas/ErrorInfo'
+        results:
+          type: array
+          description: 'List of language detection results ordered by probability score (highest first).
+
+            '
+          items:
+            $ref: '#/components/schemas/LanguageResult'
     ErrorResponse:
       type: object
       description: Error response object.
@@ -78,22 +91,6 @@ components:
           example: false
         error:
           $ref: '#/components/schemas/ErrorInfo'
-    ErrorInfo:
-      type: object
-      description: Details about an API error.
-      properties:
-        code:
-          type: integer
-          description: Numeric error code.
-          example: 101
-        type:
-          type: string
-          description: Short error type identifier.
-          example: missing_access_key
-        info:
-          type: string
-          description: Human-readable error description.
-          example: You have not supplied an API Access Key.
     LanguageResult:
       type: object
       description: Language detection result for a single text.
@@ -126,23 +123,22 @@ components:
 
             '
           example: true
-    DetectResponse:
+    ErrorInfo:
       type: object
-      description: Response object for a single text language detection request.
+      description: Details about an API error.
       properties:
-        success:
-          type: boolean
-          description: Whether the API request was successful.
-          example: true
-        error:
-          $ref: '#/components/schemas/ErrorInfo'
-        results:
-          type: array
-          description: 'List of language detection results ordered by probability score (highest first).
-
-            '
-          items:
-            $ref: '#/components/schemas/LanguageResult'
+        code:
+          type: integer
+          description: Numeric error code.
+          example: 101
+        type:
+          type: string
+          description: Short error type identifier.
+          example: missing_access_key
+        info:
+          type: string
+          description: Human-readable error description.
+          example: You have not supplied an API Access Key.
   securitySchemes:
     accessKey:
       type: apiKey
