@@ -78,38 +78,6 @@ components:
           example: false
         error:
           $ref: '#/components/schemas/ErrorInfo'
-    LanguageResult:
-      type: object
-      description: Language detection result for a single text.
-      properties:
-        language_code:
-          type: string
-          description: ISO 639-1 or ISO 639-2 language code (e.g. "en", "fr").
-          example: en
-        language_name:
-          type: string
-          description: Human-readable language name (e.g. "English").
-          example: English
-        probability:
-          type: number
-          format: float
-          description: 'Probability score indicating how strongly the language was matched, based on cross-referencing words, expressions, and grammatical constructions.
-
-            '
-          example: 78.4
-        percentage:
-          type: number
-          format: float
-          description: 'Confidence percentage indicating the API''s level of confidence that the detected language is correct.
-
-            '
-          example: 99.2
-        reliable_result:
-          type: boolean
-          description: 'Boolean flag indicating whether the detection result is considered reliable.
-
-            '
-          example: true
     ErrorInfo:
       type: object
       description: Details about an API error.
@@ -145,6 +113,38 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/LanguageResult'
+    LanguageResult:
+      type: object
+      description: Language detection result for a single text.
+      properties:
+        language_code:
+          type: string
+          description: ISO 639-1 or ISO 639-2 language code (e.g. "en", "fr").
+          example: en
+        language_name:
+          type: string
+          description: Human-readable language name (e.g. "English").
+          example: English
+        probability:
+          type: number
+          format: float
+          description: 'Probability score indicating how strongly the language was matched, based on cross-referencing words, expressions, and grammatical constructions.
+
+            '
+          example: 78.4
+        percentage:
+          type: number
+          format: float
+          description: 'Confidence percentage indicating the API''s level of confidence that the detected language is correct.
+
+            '
+          example: 99.2
+        reliable_result:
+          type: boolean
+          description: 'Boolean flag indicating whether the detection result is considered reliable.
+
+            '
+          example: true
   securitySchemes:
     accessKey:
       type: apiKey
