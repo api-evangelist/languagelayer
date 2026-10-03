@@ -65,32 +65,6 @@ paths:
       - Detect
 components:
   schemas:
-    DetectResponse:
-      type: object
-      description: Response object for a single text language detection request.
-      properties:
-        success:
-          type: boolean
-          description: Whether the API request was successful.
-          example: true
-        error:
-          $ref: '#/components/schemas/ErrorInfo'
-        results:
-          type: array
-          description: 'List of language detection results ordered by probability score (highest first).
-
-            '
-          items:
-            $ref: '#/components/schemas/LanguageResult'
-    ErrorResponse:
-      type: object
-      description: Error response object.
-      properties:
-        success:
-          type: boolean
-          example: false
-        error:
-          $ref: '#/components/schemas/ErrorInfo'
     ErrorInfo:
       type: object
       description: Details about an API error.
@@ -107,6 +81,15 @@ components:
           type: string
           description: Human-readable error description.
           example: You have not supplied an API Access Key.
+    ErrorResponse:
+      type: object
+      description: Error response object.
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          $ref: '#/components/schemas/ErrorInfo'
     LanguageResult:
       type: object
       description: Language detection result for a single text.
@@ -139,6 +122,23 @@ components:
 
             '
           example: true
+    DetectResponse:
+      type: object
+      description: Response object for a single text language detection request.
+      properties:
+        success:
+          type: boolean
+          description: Whether the API request was successful.
+          example: true
+        error:
+          $ref: '#/components/schemas/ErrorInfo'
+        results:
+          type: array
+          description: 'List of language detection results ordered by probability score (highest first).
+
+            '
+          items:
+            $ref: '#/components/schemas/LanguageResult'
   securitySchemes:
     accessKey:
       type: apiKey

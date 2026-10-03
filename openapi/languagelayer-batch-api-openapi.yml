@@ -69,50 +69,6 @@ paths:
       - Batch
 components:
   schemas:
-    ErrorResponse:
-      type: object
-      description: Error response object.
-      properties:
-        success:
-          type: boolean
-          example: false
-        error:
-          $ref: '#/components/schemas/ErrorInfo'
-    ErrorInfo:
-      type: object
-      description: Details about an API error.
-      properties:
-        code:
-          type: integer
-          description: Numeric error code.
-          example: 101
-        type:
-          type: string
-          description: Short error type identifier.
-          example: missing_access_key
-        info:
-          type: string
-          description: Human-readable error description.
-          example: You have not supplied an API Access Key.
-    BatchResponse:
-      type: object
-      description: Response object for a batch language detection request.
-      properties:
-        success:
-          type: boolean
-          description: Whether the API request was successful.
-          example: true
-        error:
-          $ref: '#/components/schemas/ErrorInfo'
-        results:
-          type: array
-          description: 'Array of result arrays, one per input text, each containing language detection results ordered by probability score.
-
-            '
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/LanguageResult'
     LanguageResult:
       type: object
       description: Language detection result for a single text.
@@ -145,6 +101,50 @@ components:
 
             '
           example: true
+    ErrorResponse:
+      type: object
+      description: Error response object.
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          $ref: '#/components/schemas/ErrorInfo'
+    BatchResponse:
+      type: object
+      description: Response object for a batch language detection request.
+      properties:
+        success:
+          type: boolean
+          description: Whether the API request was successful.
+          example: true
+        error:
+          $ref: '#/components/schemas/ErrorInfo'
+        results:
+          type: array
+          description: 'Array of result arrays, one per input text, each containing language detection results ordered by probability score.
+
+            '
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/LanguageResult'
+    ErrorInfo:
+      type: object
+      description: Details about an API error.
+      properties:
+        code:
+          type: integer
+          description: Numeric error code.
+          example: 101
+        type:
+          type: string
+          description: Short error type identifier.
+          example: missing_access_key
+        info:
+          type: string
+          description: Human-readable error description.
+          example: You have not supplied an API Access Key.
   securitySchemes:
     accessKey:
       type: apiKey
