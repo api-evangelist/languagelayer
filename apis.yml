@@ -31,6 +31,9 @@ url: https://raw.githubusercontent.com/api-evangelist/languagelayer/refs/heads/m
 created: '2026-06-13'
 modified: '2026-06-13'
 specificationVersion: '0.23'
+x-docs-platform: redoc
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-10-03
 tags:
   - Language Detection
   - Natural Language Processing
