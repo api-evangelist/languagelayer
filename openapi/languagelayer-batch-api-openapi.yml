@@ -69,6 +69,22 @@ paths:
       - Batch
 components:
   schemas:
+    ErrorInfo:
+      type: object
+      description: Details about an API error.
+      properties:
+        code:
+          type: integer
+          description: Numeric error code.
+          example: 101
+        type:
+          type: string
+          description: Short error type identifier.
+          example: missing_access_key
+        info:
+          type: string
+          description: Human-readable error description.
+          example: You have not supplied an API Access Key.
     LanguageResult:
       type: object
       description: Language detection result for a single text.
@@ -129,22 +145,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/LanguageResult'
-    ErrorInfo:
-      type: object
-      description: Details about an API error.
-      properties:
-        code:
-          type: integer
-          description: Numeric error code.
-          example: 101
-        type:
-          type: string
-          description: Short error type identifier.
-          example: missing_access_key
-        info:
-          type: string
-          description: Human-readable error description.
-          example: You have not supplied an API Access Key.
   securitySchemes:
     accessKey:
       type: apiKey

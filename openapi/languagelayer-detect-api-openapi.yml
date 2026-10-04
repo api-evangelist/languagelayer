@@ -81,15 +81,6 @@ components:
           type: string
           description: Human-readable error description.
           example: You have not supplied an API Access Key.
-    ErrorResponse:
-      type: object
-      description: Error response object.
-      properties:
-        success:
-          type: boolean
-          example: false
-        error:
-          $ref: '#/components/schemas/ErrorInfo'
     LanguageResult:
       type: object
       description: Language detection result for a single text.
@@ -122,6 +113,15 @@ components:
 
             '
           example: true
+    ErrorResponse:
+      type: object
+      description: Error response object.
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          $ref: '#/components/schemas/ErrorInfo'
     DetectResponse:
       type: object
       description: Response object for a single text language detection request.
