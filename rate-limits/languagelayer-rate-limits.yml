@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 name: languagelayer Rate Limits
 description: Rate limiting policies for the languagelayer language detection API across subscription tiers.
 url: https://languagelayer.com/pricing
