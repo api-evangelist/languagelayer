@@ -69,6 +69,15 @@ paths:
       - Batch
 components:
   schemas:
+    ErrorResponse:
+      type: object
+      description: Error response object.
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          $ref: '#/components/schemas/ErrorInfo'
     ErrorInfo:
       type: object
       description: Details about an API error.
@@ -117,15 +126,6 @@ components:
 
             '
           example: true
-    ErrorResponse:
-      type: object
-      description: Error response object.
-      properties:
-        success:
-          type: boolean
-          example: false
-        error:
-          $ref: '#/components/schemas/ErrorInfo'
     BatchResponse:
       type: object
       description: Response object for a batch language detection request.
