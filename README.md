@@ -1,4 +1,4 @@
-# languagelayer (languagelayer)
+# languagelayer
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,56 +66,144 @@
 
 Language detection REST API that identifies 173 languages and accents from text with confidence scores, character usage statistics, and batch processing support, powered by an AI-based detection algorithm via the APILayer platform.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/languagelayer/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/languagelayer/refs/heads/main/apis.yml)
+**Areas:** Language Detection · Natural Language Processing · Text Analysis · Machine Learning · Artificial Intelligence
 
-## Tags
+## languagelayer on APIs.io
 
-- Language Detection
-- Natural Language Processing
-- Text Analysis
-- Machine Learning
-- AI
+Everything profiled for languagelayer is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/languagelayer/](https://apis.io/providers/languagelayer/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (2)
 
-- **Created:** 2026-06-13
-- **Modified:** 2026-06-13
+- [languagelayer Batch API](https://apis.io/apis/languagelayer/languagelayer-batch-api/) — The Batch API from languagelayer — 1 operation(s) for batch.
+- [languagelayer Detect API](https://apis.io/apis/languagelayer/languagelayer-detect-api/) — The Detect API from languagelayer — 1 operation(s) for detect.
 
-## APIs
+### Published properties
 
-### languagelayer API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-REST API for detecting the language of any text string or batch of strings, returning language code, language name, confidence scores, and character usage statistics across 173 supported languages.
+#### Agentic access (1)
 
-- **Human URL:** [https://languagelayer.com/](https://languagelayer.com/)
-- **Base URL:** `https://apilayer.net/api`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Languagelayer Agentic Access](https://apis.io/agentic-access/languagelayer/languagelayer-agentic-access/)
 
-- Language Detection
-- NLP
-- Text Classification
+#### JSON Schema (2)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://languagelayer.com/documentation)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/languagelayer/refs/heads/main/openapi/openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [DetectResponse](https://apis.io/schemas/languagelayer/detect-response/)
+- [LanguageResult](https://apis.io/schemas/languagelayer/language-result/)
 
-## Common Properties
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Languagelayer Context](https://apis.io/jsonld/languagelayer/languagelayer/)
+
+#### Examples (2)
+
+Example requests and responses.
+
+- [Batch Detect](https://apis.io/examples/languagelayer/batch-detect/)
+- [Detect English](https://apis.io/examples/languagelayer/detect-english/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [languagelayer Batch API](https://apis.io/collections/languagelayer/open-languagelayer-batch-api/)
+- [languagelayer Batch Detect API](https://apis.io/collections/languagelayer/open-languagelayer-detect-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [languagelayer — jsonschema rules](https://apis.io/rules/languagelayer/languagelayer-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Languagelayer Authentication](https://apis.io/security/languagelayer/languagelayer-authentication/)
+- [Languagelayer Domain Security](https://apis.io/security/languagelayer/languagelayer-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Languagelayer Plans Pricing](https://apis.io/plans/languagelayer/languagelayer-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Languagelayer Rate Limits](https://apis.io/rate-limits/languagelayer/languagelayer-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Languagelayer Finops](https://apis.io/finops/languagelayer/languagelayer-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://languagelayer.com/)
 - [Documentation](https://languagelayer.com/documentation)
-- [Git Hub Org](https://github.com/apilayer)
-- [LinkedIn](https://www.linkedin.com/company/apilayer/)
-- [Blog](https://blog.apilayer.com/)
 - [Pricing](https://languagelayer.com/pricing)
-- [Status Page](https://languagelayer.com/api-status)
-- [X (Twitter)](https://x.com/apilayernet)
-- [Plans](plans/languagelayer-plans-pricing.yml)
-- [Rate Limits](rate-limits/languagelayer-rate-limits.yml)
-- [Fin Ops](finops/languagelayer-finops.yml)
+- [Blog](https://blog.apilayer.com/)
+- [Status](https://languagelayer.com/api-status)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 31.6** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 54.2 |
+| Contract governance | 9.8 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 22.6 |
+| Access clarity | 18.4 |
+
+**Agent readiness 28.7** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 15.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/languagelayer/](https://apis.io/providers/languagelayer/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for languagelayer: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/languagelayer/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
